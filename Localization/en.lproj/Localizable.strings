@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Localization
+
+  Created by Dwi Randy Herdinanto on 04/04/20.
+  Copyright © 2020 dwirandyh.com. All rights reserved.
+*/
+"label"                 =   "This is label";
+"button"                =   "This is button";
+"tab_bar_item"          =   "This tab item";
+"navigation_title"      =   "First Page";
+"navigation_prompt"     =   "Navigation Prompt";
+"bar_button_item"       =   "This is bar button";
