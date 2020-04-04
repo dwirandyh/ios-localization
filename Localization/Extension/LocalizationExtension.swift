@@ -14,7 +14,8 @@ public protocol Localizable {
 
 public extension String {
     func localize() -> String {
-        return NSLocalizedString(self, comment: "")
+        let key = String(self.dropFirst())
+        return NSLocalizedString(key, comment: "")
     }
 }
 
@@ -25,7 +26,8 @@ extension UILabel : Localizable {
     }
     
     public func localize() {
-        self.text = self.text?.localize()
+        guard let textString = text, textString.first == "@" else { return }
+        self.text = textString.localize()
     }
 }
 
@@ -37,9 +39,10 @@ extension UIButton : Localizable {
     }
     
     public func localize() {
+        guard let textString = self.titleLabel?.text, textString.first == "@" else { return }
         let controlStates: Array<UIControl.State> = [.normal, .highlighted, .disabled, .selected, .focused, .application, .reserved]
         for controlState in controlStates {
-            self.setTitle(self.titleLabel?.text?.localize(), for: controlState)
+            self.setTitle(textString.localize(), for: controlState)
         }
     }
 }
@@ -51,7 +54,8 @@ extension UIBarItem: Localizable {
     }
     
     public func localize() {
-        self.title = self.title?.localize()
+        guard let textString = self.title, textString.first == "@" else { return }
+        self.title = textString.localize()
     }
 }
 
@@ -63,7 +67,15 @@ extension UINavigationItem: Localizable {
     }
     
     public func localize() {
-        self.title = self.title?.localize()
-        self.prompt = self.prompt?.localize()
+        if let titleString = self.title {
+            if titleString.first == "@" {
+                self.title = titleString.localize()
+            }
+        }
+        if let promptString = self.prompt {
+            if promptString.first == "@" {
+                self.prompt = promptString.localize()
+            }
+        }
     }
 }
