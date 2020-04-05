@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Localization
+
+  Created by Dwi Randy Herdinanto on 04/04/20.
+  Copyright © 2020 dwirandyh.com. All rights reserved.
+*/
+"label"                 =   "iOSアプリケーションでのローカリゼーション";
+"button"                =   "ここをクリック";
+"tab_bar_item"          =   "ホーム";
+"navigation_title"      =   "私のアプリケーション";
+"navigation_prompt"     =   "ようこそ";
+"bar_button_item"       =   "その他の";
+"first_segment"         =   "ライトモード";
+"second_segment"        =   "ダークモード";

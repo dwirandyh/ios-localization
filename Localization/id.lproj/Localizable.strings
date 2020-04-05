@@ -5,9 +5,11 @@
   Created by Dwi Randy Herdinanto on 04/04/20.
   Copyright © 2020 dwirandyh.com. All rights reserved.
 */
-"label"                 =   "Ini Label";
-"button"                =   "Ini Button";
-"tab_bar_item"          =   "Ini Tab Item";
-"navigation_title"      =   "Halaman Pertama";
-"navigation_prompt"     =   "Prompt Navigasi";
-"bar_button_item"       =   "Ini Bar Button";
+"label"                 =   "Lokalisasi pada aplikasi iOS";
+"button"                =   "Klik disini";
+"tab_bar_item"          =   "Beranda";
+"navigation_title"      =   "Aplikasi Saya";
+"navigation_prompt"     =   "Selamat Datang";
+"bar_button_item"       =   "Lainnya";
+"first_segment"         =   "Mode Terang";
+"second_segment"        =   "Mode Gelap";

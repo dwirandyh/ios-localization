@@ -25,19 +25,43 @@
                                 <rect key="frame" x="50" y="282" width="314" height="30"/>
                                 <state key="normal" title="@button"/>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PHO-iu-nqp">
+                                <rect key="frame" x="82" y="342" width="250" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ScB-gJ-MkB"/>
+                                    <constraint firstAttribute="width" constant="250" id="kta-Ko-7iN"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="@first_segment"/>
+                                    <segment title="@second_segment"/>
+                                </segments>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flag_en" translatesAutoresizingMaskIntoConstraints="NO" id="MN7-mO-ez5">
+                                <rect key="frame" x="89.5" y="458" width="235" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="UlN-HJ-uUX"/>
+                                    <constraint firstAttribute="width" constant="235" id="akt-IO-WRb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedImage" value="flag"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4lG-dl-f7t" firstAttribute="top" secondItem="yHw-bc-FKk" secondAttribute="bottom" constant="20" id="1Fx-kQ-IUX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4lG-dl-f7t" secondAttribute="trailing" constant="50" id="Bch-u5-TTV"/>
+                            <constraint firstItem="PHO-iu-nqp" firstAttribute="top" secondItem="4lG-dl-f7t" secondAttribute="bottom" constant="30" id="cSL-by-rJY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yHw-bc-FKk" secondAttribute="trailing" constant="20" id="cip-VK-Knr"/>
+                            <constraint firstItem="MN7-mO-ez5" firstAttribute="top" secondItem="PHO-iu-nqp" secondAttribute="bottom" constant="85" id="coY-qP-Fu9"/>
                             <constraint firstItem="4lG-dl-f7t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="eTY-1V-Vzb"/>
                             <constraint firstItem="yHw-bc-FKk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mLP-kJ-R1V"/>
+                            <constraint firstItem="MN7-mO-ez5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oXt-er-rZm"/>
                             <constraint firstItem="yHw-bc-FKk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="119" id="wpI-Gm-1JC"/>
+                            <constraint firstItem="PHO-iu-nqp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ws0-3O-Juy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="@tab_bar_item" id="Usl-vk-UyI"/>
                     <navigationItem key="navigationItem" title="@navigation_title" prompt="@navigation_prompt" id="Gpu-Ct-Wuj">
                         <barButtonItem key="rightBarButtonItem" title="@bar_button_item" id="CM9-Ze-wcZ"/>
                     </navigationItem>
@@ -52,7 +76,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jD1-mL-bZC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tvc-rZ-mJj">
+                    <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tvc-rZ-mJj">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,11 +89,11 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
-        <!--tab_bar_item-->
+        <!--@tab_bar_item-->
         <scene sceneID="IBo-a8-Mqu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lMY-Gn-EmQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="tab_bar_item" id="V6G-yL-s4t"/>
+                    <tabBarItem key="tabBarItem" title="@tab_bar_item" image="house.fill" catalog="system" id="V6G-yL-s4t"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XD8-d5-NJc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -85,4 +109,8 @@
             <point key="canvasLocation" x="1047.8260869565217" y="133.92857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flag_en" width="1024" height="614"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+    </resources>
 </document>
