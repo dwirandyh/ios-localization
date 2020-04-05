@@ -1,5 +1,5 @@
 //
-//  StringLocalization.swift
+//  LocalizationExtension.swift
 //  Localization
 //
 //  Created by Dwi Randy Herdinanto on 04/04/20.
