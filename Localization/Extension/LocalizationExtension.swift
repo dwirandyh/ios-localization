@@ -24,6 +24,14 @@ extension UILabel : Localizable {
         self.localize()
     }
     
+    // Add additional parameter for localization key
+    @IBInspectable var LocalizedKey: String? {
+        get { return nil }
+        set(key) {
+            text = key?.localize()
+        }
+    }
+    
     public func localize() {
         guard let textString = text, textString.first == "@" else { return }
         self.text = String(textString.dropFirst()).localize()
@@ -36,6 +44,17 @@ extension UIButton : Localizable {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
+    }
+    
+    // Add additional parameter for localization key
+    @IBInspectable var LocalizedKey: String? {
+        get { return nil }
+        set(key) {
+            let controlStates: Array<UIControl.State> = [.normal, .highlighted, .disabled, .selected, .focused, .application, .reserved]
+            for controlState in controlStates {
+                self.setTitle(key?.localize(), for: controlState)
+            }
+        }
     }
     
     public func localize() {
@@ -54,6 +73,14 @@ extension UIBarItem: Localizable {
         self.localize()
     }
     
+    // Add additional parameter for localization key
+    @IBInspectable var LocalizedKey: String? {
+        get { return nil }
+        set(key) {
+            self.title = key?.localize()
+        }
+    }
+    
     public func localize() {
         guard let textString = self.title, textString.first == "@" else { return }
         self.title = String(textString.dropFirst()).localize()
@@ -66,6 +93,22 @@ extension UINavigationItem: Localizable {
     open override func awakeFromNib() {
         super.awakeFromNib()
         self.localize()
+    }
+    
+    // Add additional parameter for localization key
+    @IBInspectable var LocalizedTitleKey: String? {
+        get { return nil }
+        set(key) {
+            self.title = key?.localize()
+        }
+    }
+    
+    // Add additional parameter for localization key
+    @IBInspectable var LocalizedPromptKey: String? {
+        get { return nil }
+        set(key) {
+            self.prompt = key?.localize()
+        }
     }
     
     public func localize() {
@@ -106,12 +149,13 @@ extension UIImageView {
     }
     
     @IBInspectable
-    var localizedImage: String {
+    var localizedImage: String? {
         get {
-            return ""
+            return nil
         }
-        set {
-            self.localize(localized: newValue)
+        set(key) {
+            guard let localizedKey = key else { return }
+            self.localize(localized: localizedKey)
         }
     }
 }
